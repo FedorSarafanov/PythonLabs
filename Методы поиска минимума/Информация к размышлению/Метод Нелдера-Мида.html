@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0149)http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+				<meta name="keywords" content="Метод Нелдера-Мида,Практикум ММП ВМК, 4й курс, осень 2008">
+		<link rel="shortcut icon" href="http://www.machinelearning.ru/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://www.machinelearning.ru/wiki/opensearch_desc.php" title="MachineLearning (Русский)">
+		<link title="Creative Commons" type="application/rdf+xml" href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;action=creativecommons" rel="meta">
+		<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/rss+xml" title="MachineLearning — RSS-лента" href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Recentchanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="MachineLearning - Atom лента" href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Recentchanges&amp;feed=atom">
+		<title>Метод Нелдера-Мида</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/wiki/skins/common/shared.css?116";
+			@import "/wiki/skins/monobook/main.css?116";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="./Метод Нелдера-Мида_files/commonPrint.css">
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE50Fixes.css?116";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE55Fixes.css?116";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/wiki/skins/monobook/IE60Fixes.css?116";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/wiki/skins/monobook/IE70Fixes.css?116";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/wiki/skins/common/IEFixes.js?116"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript" async="" src="./Метод Нелдера-Мида_files/watch.js.Без названия"></script><script type="text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/wiki/skins";
+var wgArticlePath = "/wiki/index.php?title=$1";
+var wgScriptPath = "/wiki";
+var wgScript = "/wiki/index.php";
+var wgServer = "http://www.machinelearning.ru";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Метод_Нелдера-Мида";
+var wgTitle = "Метод Нелдера-Мида";
+var wgAction = "view";
+var wgRestrictionEdit = [];
+var wgRestrictionMove = [];
+var wgArticleId = "1299";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserGroups = null;
+var wgUserLanguage = "ru";
+var wgContentLanguage = "ru";
+var wgBreakFrames = false;
+var wgCurRevisionId = "25550";
+var wgVersion = "1.12.0";
+var wgEnableAPI = true;
+var wgEnableWriteAPI = false;
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="./Метод Нелдера-Мида_files/wikibits.js.Без названия"><!-- wikibits js --></script><link rel="stylesheet" type="text/css" href="./Метод Нелдера-Мида_files/KHTMLFixes.css">
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="./Метод Нелдера-Мида_files/ajax.js.Без названия"></script>
+		<script type="text/javascript" src="./Метод Нелдера-Мида_files/index.php"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/wiki/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+	</head>
+<body class="mediawiki ns-0 ltr page-Метод_Нелдера-Мида">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Метод Нелдера-Мида</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">Материал из MachineLearning.</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Перейти к: <a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#column-one">навигация</a>, <a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#searchInput">поиск</a></div>			<!-- start content -->
+			<dl><dd> <i>Не путать с «симплекс-методом» из линейного программирования&nbsp;— методом оптимизации линейной системы с ограничениями.</i>
+</dd></dl>
+<table id="toc" class="toc" summary="Содержание"><tbody><tr><td><div id="toctitle"><h2>Содержание</h2> <span class="toctoggle">[<a id="togglelink" class="internal" href="javascript:toggleToc()">убрать</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5"><span class="tocnumber">1</span> <span class="toctext">Введение</span></a>
+<ul>
+<li class="toclevel-2"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.9F.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B8"><span class="tocnumber">1.1</span> <span class="toctext">Постановка математической задачи</span></a></li>
+<li class="toclevel-2"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.A0.D0.B0.D1.81.D1.81.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D0.B0.D1.8F_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B0"><span class="tocnumber">1.2</span> <span class="toctext">Рассматриваемая задача</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.98.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"><span class="tocnumber">2</span> <span class="toctext">Изложение метода</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"><span class="tocnumber">3</span> <span class="toctext">Анализ метода</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.A7.D0.B8.D1.81.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.8D.D0.BA.D1.81.D0.BF.D0.B5.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D1.82"><span class="tocnumber">4</span> <span class="toctext">Числовой эксперимент</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.A0.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B8.D1.81.D1.82.D1.83"><span class="tocnumber">5</span> <span class="toctext">Рекомендации программисту</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.97.D0.B0.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5"><span class="tocnumber">6</span> <span class="toctext">Заключение</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BB.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D1.8B"><span class="tocnumber">7</span> <span class="toctext">Список литературы</span></a></li>
+<li class="toclevel-1"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"><span class="tocnumber">8</span> <span class="toctext">См. также</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "показать"; var tocHideText = "убрать"; showTocToggle(); } </script>
+<a name=".D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5"></a><h2> <span class="mw-headline"> Введение </span></h2>
+<p>Метод Нелдера-Мида является развитием симплексного метода Спендли, Хекста и Химсворта. Выпуклая оболочка множества <img src="./Метод Нелдера-Мида_files/saved_resource" alt="(n+1)">-й равноудаленной точки в <img src="./Метод Нелдера-Мида_files/saved_resource(1)" alt="n">-мерном пространстве называется регулярным симплексом. Эта конфигурация рассматривается в методе Спендли, Хекста и Химсворта. В двухмерном пространстве регулярным симплексом является правильный треугольник, а в трехмерном - правильный тетраэдр. Идея метода состоит в сравнении значений функции в <img src="./Метод Нелдера-Мида_files/saved_resource" alt="(n+1)"> вершинах симплекса и перемещении симплекса в направлении оптимальной точки с помощью итерационной процедуры. В симплексном методе, предложенном первоначально, регулярный симплекс использовался на каждом этапе. Нелдер и Мид предложили несколько модификаций этого метода, допускающих, чтобы симплексы были неправильными. В результате получился очень надежный метод прямого поиска, являющийся одним из самых эффективных при <img src="./Метод Нелдера-Мида_files/saved_resource(2)" alt="n \le 6">.
+</p><p>Главными особенностями алгоритма можно назвать следующие:
+</p>
+<ul><li> Метод Нелдера-Мида не накладывает ограничений на гладкость функции
+</li><li> Данный метод явялется эффективным при низкой скорости вычисления минимизируемой функции. Как правило, на каждой итерации происходит вычисление значения функции не более чем в 3 точках.
+</li><li> Отсутствие теории сходимости. АЛгоритм может расходиться даже на гладких функциях.
+</li></ul>
+<a name=".D0.9F.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B8"></a><h3> <span class="mw-headline"> Постановка математической задачи </span></h3>
+<p>Задачей оптимизации называется задача поиска экстремума функции, заданной на некотором множетсве.
+</p>
+<dl><dd><dl><dd><img src="./Метод Нелдера-Мида_files/saved_resource(3)" alt="f: \: \mathbb{X} \rightarrow \mathbb{R}">
+</dd></dl>
+</dd></dl>
+<div style="float:right; clear:right;" id="eq:_1.1">( 1.1)</div>
+<dl><dd><dl><dd><img src="./Метод Нелдера-Мида_files/saved_resource(4)" alt="f(x) \rightarrow min, \: x \in \mathbb{X} \subseteq \mathbb{G}">.
+</dd></dl>
+</dd></dl>
+<p>Как правило, под задачей оптимизации также подразумевается поиск элемента <img src="./Метод Нелдера-Мида_files/saved_resource(5)" alt="x">, при котором <i>целевая функция</i> <img src="./Метод Нелдера-Мида_files/saved_resource(6)" alt="f(x)"> достигает экстремума.
+</p>
+<div style="float:right; clear:right;" id="eq:_1.2">( 1.2)</div>
+<dl><dd><dl><dd><img src="./Метод Нелдера-Мида_files/saved_resource(7)" alt="x_{*}=arg \mathrm{}\min_{x \in \mathbb{X}} {f(x)}, \:  \mathbb{X} \subseteq \mathbb{G}">
+</dd></dl>
+</dd></dl>
+<p>Для того, чтобы корректно поставить задачу оптимизации необходимо задать:
+</p>
+<ol><li> <i>Допустимое множество</i> <img src="./Метод Нелдера-Мида_files/saved_resource(8)" alt="\mathbb{X}">
+</li><li> <i>Целевую функцию</i> <img src="./Метод Нелдера-Мида_files/saved_resource(3)" alt="f: \: \mathbb{X} \rightarrow \mathbb{R}">
+</li><li> <i>Критерий поиска</i> (max или min)
+</li></ol>
+<p>Тогда решить задачу <img src="./Метод Нелдера-Мида_files/saved_resource(9)" alt="f(x) \rightarrow \mathrm{}\min_{x \in \mathbb{X}}"> означает одно из:
+</p>
+<ol><li> Показать что <img src="./Метод Нелдера-Мида_files/saved_resource(10)" alt="\mathbb{X} = \emptyset ">
+</li><li> Показать, что целевая функция <img src="./Метод Нелдера-Мида_files/saved_resource(6)" alt="f(x)"> не ограничена.
+</li><li> Найти <img src="./Метод Нелдера-Мида_files/saved_resource(11)" alt="x_{*}">
+</li><li> Если не существует <img src="./Метод Нелдера-Мида_files/saved_resource(12)" alt=" x_{*}">, то найти <img src="./Метод Нелдера-Мида_files/saved_resource(13)" alt="\mathrm{}\inf_{x \in \mathbb{X}} {f(x)}">
+</li></ol>
+<p>Если допустимое множество <img src="./Метод Нелдера-Мида_files/saved_resource(14)" alt="\mathbb{X}=\mathbb{G}"> , то такая задача называется <i>задачей безусловной оптимизации</i>, в противном случае — <i>задачей условной оптимизации</i>.
+</p>
+<a name=".D0.A0.D0.B0.D1.81.D1.81.D0.BC.D0.B0.D1.82.D1.80.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D0.B0.D1.8F_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B0"></a><h3> <span class="mw-headline"> Рассматриваемая задача </span></h3>
+<p><b>Метод Нелдера-Мида</b>, также известный как <b>метод деформируемого многогранника</b>, — метод безусловной оптимизации вещественной функции от нескольких переменных. Иными словами на допустимое множество накладываются следующие ограничения:
+</p>
+<dl><dd><dl><dd><img src="./Метод Нелдера-Мида_files/saved_resource(15)" alt="\mathbb{X}=\mathbb{G}=\mathbb{R}^n">.
+</dd></dl>
+</dd></dl>
+<p>Кроме того, одним из главных преимуществ данного метода является то, что в нем не используется градиента целевой функции, что позволяет применять его к негладким функциям. Метод Нелдера-Мида использует понятие <i>симплекса <img src="./Метод Нелдера-Мида_files/saved_resource(1)" alt="n">-мерного пространства'</i>.
+</p><p>Множество <img src="./Метод Нелдера-Мида_files/saved_resource(16)" alt="C"> называется <i>выпуклым</i>, если <img src="./Метод Нелдера-Мида_files/saved_resource(17)" alt="\forall a,b \in C \: [a,b] \subseteq C">.
+</p><p><i>Выпуклой оболочкой</i> множества <img src="./Метод Нелдера-Мида_files/saved_resource(18)" alt="X"> называется наименьшее выпуклое множество <img src="./Метод Нелдера-Мида_files/saved_resource(16)" alt="C"> такое, что <img src="./Метод Нелдера-Мида_files/saved_resource(19)" alt="X \subseteq C">
+</p><p><i>Симплексом</i> или <i><img src="./Метод Нелдера-Мида_files/saved_resource(1)" alt="n">-симплексом</i> называется выпуклая оболочка множества <img src="./Метод Нелдера-Мида_files/saved_resource" alt="(n+1)"> точек.
+</p><p>Например:
+</p><p>1-симплексом является отрезок
+</p><p>2-симплексом является треугольник
+</p><p>3-симплексом является тетраэдр.
+</p>
+<a name=".D0.98.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"></a><h2> <span class="mw-headline"> Изложение метода </span></h2>
+<p>Параметрами метода являются:
+</p>
+<ul><li> коэффициент отражения <img src="./Метод Нелдера-Мида_files/saved_resource(20)" alt="\alpha &gt;0">, обычно выбирается равным 1.
+</li><li> коэффициент сжатия <img src="./Метод Нелдера-Мида_files/saved_resource(21)" alt="\beta &gt;0">, обычно выбирается равным 0.5.
+</li><li> коэффициент растяжения <img src="./Метод Нелдера-Мида_files/saved_resource(22)" alt="\gamma &gt;0">, обычно выбирается равным 2.
+</li></ul>
+<p><u>Инициализация</u>.Произвольным образом выбирается <img src="./Метод Нелдера-Мида_files/saved_resource(23)" alt="n+1"> точка <img src="./Метод Нелдера-Мида_files/saved_resource(24)" alt="x_i = \left(x^{(1)}_i,x^{(2)}_i,\ldots,x^{(n)}_i\right)">, образующие симплекс n-мерного пространства. В этих точках вычисляются значения функции: <img src="./Метод Нелдера-Мида_files/saved_resource(25)" alt="f_1=f(x^{(1)}_i), f_2=f(x^{(2)}_i),\ldots, f_{n+1}=f(x^{(n+1)}_i)">.
+</p>
+<dl><dd> 1. <u>Сортировка</u>. Из вершин симплекса выбираем три точки: <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> с наибольшим (из выбранных) значением функции <img src="./Метод Нелдера-Мида_files/saved_resource(27)" alt="f_h">, <img src="./Метод Нелдера-Мида_files/saved_resource(28)" alt="x_g"> со следующим по величине значением <img src="./Метод Нелдера-Мида_files/saved_resource(29)" alt="f_g"> и <img src="./Метод Нелдера-Мида_files/saved_resource(30)" alt="x_l"> с наименьшим значением функции <img src="./Метод Нелдера-Мида_files/saved_resource(31)" alt="f_l">. Целью дальнейших манипуляций будет уменьшение по крайней мере <img src="./Метод Нелдера-Мида_files/saved_resource(27)" alt="f_h">.
+</dd></dl>
+<dl><dd> 2. Найдём центр тяжести всех точек, за исключением <img src="./Метод Нелдера-Мида_files/saved_resource(32)" alt="x_h: x_c=\frac{1}{n} \sum_{i\neq h} x_i ">. Вычислять <img src="./Метод Нелдера-Мида_files/saved_resource(33)" alt="f_c=f(x_c)"> не обязательно.
+</dd></dl>
+<dl><dd> 3. <u>Отражение</u>. Отразим точку <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> относительно <img src="./Метод Нелдера-Мида_files/saved_resource(34)" alt="x_c"> с коэффициентом <img src="./Метод Нелдера-Мида_files/saved_resource(35)" alt="\alpha"> (при <img src="./Метод Нелдера-Мида_files/saved_resource(36)" alt="\alpha=1"> это будет центральная симметрия, в общем случае&nbsp;— гомотетия), получим точку <img src="./Метод Нелдера-Мида_files/saved_resource(37)" alt="x_r"> и вычислим в ней функцию: <img src="./Метод Нелдера-Мида_files/saved_resource(38)" alt="f_r=f(x_r)">. Координаты новой точки вычисляются по формуле <img src="./Метод Нелдера-Мида_files/saved_resource(39)" alt="x_r = (1+\alpha)x_c - \alpha x_h">
+</dd></dl>
+<dl><dd> 4. Далее сравниваем значение <img src="./Метод Нелдера-Мида_files/saved_resource(40)" alt="f_r"> со значениями <img src="./Метод Нелдера-Мида_files/saved_resource(41)" alt="f_h, f_g, f_l">:
+</dd></dl>
+<dl><dd><dl><dd> 4а. Если <img src="./Метод Нелдера-Мида_files/saved_resource(42)" alt="f_r&lt;f_l">, то производим <u>растяжение</u>. Новая точка <img src="./Метод Нелдера-Мида_files/saved_resource(43)" alt="x_e = (1-\gamma)x_c + \gamma x_r"> и значение функции <img src="./Метод Нелдера-Мида_files/saved_resource(44)" alt="f_e=f(x_e)">.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Если <img src="./Метод Нелдера-Мида_files/saved_resource(45)" alt="f_e&lt;f_l">, то заменяем точку <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> на <img src="./Метод Нелдера-Мида_files/saved_resource(46)" alt="x_e"> и заканчиваем итерацию (на шаг 8).
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Если <img src="./Метод Нелдера-Мида_files/saved_resource(47)" alt="f_e&gt;f_l">, то заменяем точку <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> на <img src="./Метод Нелдера-Мида_files/saved_resource(37)" alt="x_r"> и заканчиваем итерацию (на шаг 8).
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> 4b. Если <img src="./Метод Нелдера-Мида_files/saved_resource(48)" alt="f_l &lt; f_r &lt; f_g">, то заменяем точку <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> на <img src="./Метод Нелдера-Мида_files/saved_resource(37)" alt="x_r"> и переходим на шаг 8.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> 4с. Если <img src="./Метод Нелдера-Мида_files/saved_resource(49)" alt="f_h &gt; f_r &gt; f_g">, то меняем обозначения <img src="./Метод Нелдера-Мида_files/saved_resource(50)" alt="x_r, x_h"> (и соответствующие значения функции) местами и переходим на шаг 5.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> 4d. Если <img src="./Метод Нелдера-Мида_files/saved_resource(51)" alt="f_r &gt; f_h">, то переходим на шаг 5.
+</dd></dl>
+</dd></dl>
+<dl><dd> 5. <u>Сжатие</u>. Строим точку <img src="./Метод Нелдера-Мида_files/saved_resource(52)" alt="x_s = \beta x_h + (1-\beta) x_c"> и вычисляем в ней значение <img src="./Метод Нелдера-Мида_files/saved_resource(53)" alt="f_s">.
+</dd></dl>
+<dl><dd> 6. Если <img src="./Метод Нелдера-Мида_files/saved_resource(54)" alt="f_s &lt; f_h">, то заменяем точку <img src="./Метод Нелдера-Мида_files/saved_resource(26)" alt="x_h"> на <img src="./Метод Нелдера-Мида_files/saved_resource(55)" alt="x_s"> и переходим на шаг 8.
+</dd></dl>
+<dl><dd> 7. Если <img src="./Метод Нелдера-Мида_files/saved_resource(56)" alt="f_s &gt; f_h">, то производим <u>сжатие симплекса</u>&nbsp;— гомотетию к точке с наименьшим значением <img src="./Метод Нелдера-Мида_files/saved_resource(57)" alt="x_0">: <img src="./Метод Нелдера-Мида_files/saved_resource(58)" alt="x_i \to x_0 + (x_i-x_0)/2"> для всех требуемых точек <img src="./Метод Нелдера-Мида_files/saved_resource(59)" alt="x_i">.
+</dd></dl>
+<dl><dd> 8. Последний шаг&nbsp;— проверка сходимости. Может выполняться по-разному, например, оценкой дисперсии набора точек. Суть проверки заключается в том, чтобы проверить взаимную близость полученных вершин симплекса, что предполагает и близость их к искомому минимуму. Если требуемая точность ещё не достигнута, можно продолжить итерации с шага 1.
+</dd></dl>
+<a name=".D0.90.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"></a><h2> <span class="mw-headline"> Анализ метода </span></h2>
+<p>Изучение сходимости алгоритма Нелдера-Мида является трудной математической задачей. Известные результаты о сходимости симплекс-методов основаны на следующих предположениях:
+</p>
+<ul><li> Симплекс не должен вырождаться при итерациях алгоритма
+</li></ul>
+<ul><li> На гладкость функции накладываются некоторые условия
+</li></ul>
+<p>В общем случае для метода Нелдера-Мида не выполняются сразу оба эти предположения, а следовательно, об условиях сходимости известно весьма мало.
+МакКиннон в 1998 году описал семейство строго выпуклых функций и класс начальных симплексов в двухмерном пространстве, для которых все вершины рабочего симплекса сходятся не к оптимальной точке.
+В 1998 году Лагариас опубликовал статью, в которой он исследовал сходимость метода в одно- и двухмерном пространствах для некоторых строго выпуклых функций с ограниченными поверхностями уровня.
+</p><p>Алгоритм Нелдера-Мида дает сильное уменьшение значение функции уже при первых нескольких итерациях и быстро достигает необходимой точности. Как правило, алгоритм производит одно или два вычисления функции на каждой итерации, если не учитывать сжатие, которое редко используется на практике. Это крайне важно в тех ситуациях, когда вычисление значений функции очень дорого или же требует много времени. Для подобных задач алгоритм Нелдера-Мида гораздо эффективнее многих других методов, требующих вычисления не менее <img src="./Метод Нелдера-Мида_files/saved_resource(1)" alt="n"> значений функции на каждой итерации.
+</p><p>Главными преимуществами алгоритма являются его простота и эффективность.
+</p><p>С другой стороны, в силу отсутствия теории сходимости, на практике метод может приводить к неверному ответу даже для гладких функций. Также возможна ситуация, когда рабочий симплекс находится далеко от оптимальной точки, а алгоритм производит большое число итерации, при этом мало изменяя значения функции. Эвристический метод решения этой проблемы заключается в запуске алгоритма несколько раз и ограничении числа итераций.
+</p>
+<a name=".D0.A7.D0.B8.D1.81.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.8D.D0.BA.D1.81.D0.BF.D0.B5.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D1.82"></a><h2> <span class="mw-headline"> Числовой эксперимент </span></h2>
+<p>В качестве числового эксперимента метод Нелдера-Мида был применен для вычисления минимума <i>функции Розенброка</i>:
+</p><p><img src="./Метод Нелдера-Мида_files/saved_resource(60)" alt="f(x_1,x_2)=100(x_2-x_1^2)^2+(1-x_1)^2;">
+</p><p>для которой <img src="./Метод Нелдера-Мида_files/saved_resource(61)" alt="x_*=(1;1)"> и <img src="./Метод Нелдера-Мида_files/saved_resource(62)" alt="f_*=0">. В качестве начального прибилжения был взят симплекс <img src="./Метод Нелдера-Мида_files/saved_resource(63)" alt="\{ (10;9),(10;-2),(21;1) \}">.
+</p><p>Ниже приведена таблица промежуточных результатов после каждых 10 итераций алгоритма.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th> Число итераций
+</th><th> Координаты первой точки симплекса
+</th><th> Координаты второй точки симплекса
+</th><th> Координаты третьей точки симплекса
+</th><th> <img src="./Метод Нелдера-Мида_files/saved_resource(31)" alt="f_l">
+</th><th> <img src="./Метод Нелдера-Мида_files/saved_resource(27)" alt="f_h">
+</th></tr>
+<tr>
+<td> 10
+</td><td> x=2.78; y=7.55;
+</td><td> x=2.39; y=6.39;
+</td><td> x=1.73; y=6.87;
+</td><td> 6.725
+</td><td> 1479.400
+</td></tr>
+<tr>
+<td> 20
+</td><td> x=2.63; y=6.96;
+</td><td> x=2.70; y=7.29;
+</td><td> x=2.64; y=6.88;
+</td><td> 2.769
+</td><td> 3.225
+</td></tr>
+<tr>
+<td> 30
+</td><td> x=2.24; y=4.94;
+</td><td> x=2.35; y=5.50;
+</td><td> x=2.42; y=5.86;
+</td><td> 1.823
+</td><td> 2.017
+</td></tr>
+<tr>
+<td> 40
+</td><td> x=1.90; y=3.58;
+</td><td> x=1.83; y=3.38;
+</td><td> x=1.97; y=3.89;
+</td><td> 0.821
+</td><td> 0.996
+</td></tr>
+<tr>
+<td> 50
+</td><td> x=1.51; y=2.28;
+</td><td> x=1.53; y=2.36;
+</td><td> x=1.57; y=2.47;
+</td><td> 0.273
+</td><td> 0.327
+</td></tr>
+<tr>
+<td> 60
+</td><td> x=1.20; y=1.42;
+</td><td> x=1.23; y=1.51;
+</td><td> x=1.27; y=1.61;
+</td><td> 0.050
+</td><td> 0.079
+</td></tr>
+<tr>
+<td> 70
+</td><td> x=0.99; y=0.97;
+</td><td> x=1.01; y=1.02;
+</td><td> x=0.96; y=0.93;
+</td><td> 0.000
+</td><td> 0.003
+</td></tr></tbody></table>
+<p>Итоговое количество итераций 79. Вычисленный минимум функционала равен <img src="./Метод Нелдера-Мида_files/saved_resource(64)" alt="0.6 * 10^{-5}">.
+</p>
+<a name=".D0.A0.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B8.D1.81.D1.82.D1.83"></a><h2> <span class="mw-headline"> Рекомендации программисту </span></h2>
+<p>Метод Нелдера-Мида прост в реализации, в качестве параметров алгоритма как правило используются следующие:
+</p><p><img src="./Метод Нелдера-Мида_files/saved_resource(65)" alt="\alpha = 1">, <img src="./Метод Нелдера-Мида_files/saved_resource(66)" alt="\beta = 0.5">, <img src="./Метод Нелдера-Мида_files/saved_resource(67)" alt="\gamma = 2">.
+</p><p>В качестве начального, как правило, используется произвольный симплекс. Также возможно многократное вычисление минимума при различных случайных начальных симплексах.
+</p><p>Ниже приведен пример функции на языке C++, реализующей алгоритм.
+</p>
+<pre>double NMA(Simplex* smpl, double alpha=1.0, double beta=0.5, double gamma=2.0)
+{
+	double f[N_DIM + 1];
+	double f_h, f_g, f_l, f_r, f_e, f_s, tempD;
+	Vertex x_h, x_g, x_l, x_r, x_e, x_s, x_c, tempV;
+	int i;
+	bool flag;
+
+	for (i=0; i&lt;=N_DIM;i++)		f[i]=Func(smpl-&gt;v[i]);	// Вычисление значений функции на начальном симплексе
+
+	while (!QuitCase(smpl))	// Проверка на условие выхода
+	{	
+		// Шаг 1. Сортировка 
+		Sort(smpl,f); 
+		x_h = smpl-&gt;v[N_DIM];		f_h = f[N_DIM];
+		x_g = smpl-&gt;v[N_DIM - 1];	f_g = f[N_DIM - 1];
+		x_l = smpl-&gt;v[0];		f_l = f[0];
+
+		// Шаг 2. Вычисление центра тяжести симплекса
+		x_c.x=x_c.y=0;
+		for (i=0; i&lt;N_DIM; i++) x_c += smpl-&gt;v[i];	
+		x_c = x_c/N_DIM;
+
+		// 3Шаг . Отражение
+		x_r = x_c * (1+alpha) - x_h * alpha;	f_r = Func(x_r); 
+
+		// Шаг 4.
+		if (f_r &lt;= f_l)
+		{	// Шаг 4a.
+			x_e = x_c * (1-gamma) + x_r * gamma;
+			f_e = Func(x_e);
+			if (f_e &lt; f_l)
+			{
+				smpl-&gt;v[N_DIM] = x_e;
+				f[N_DIM] = f_e;
+			}
+			else
+			{
+				smpl-&gt;v[N_DIM] = x_r;
+				f[N_DIM] = f_r;
+			}
+		}
+		if ((f_l &lt; f_r) &amp;&amp; (f_r &lt;= f_g))
+		{	// Шаг 4.b
+			smpl-&gt;v[N_DIM] = x_r;
+			f[N_DIM] = f_r;
+		}
+		flag = false;
+		if ((f_h &gt;= f_r) &amp;&amp; (f_r &gt; f_g))
+		{	// Шаг 4c.
+			flag = true;
+			tempD=f_h;
+			tempV=x_h;
+			smpl-&gt;v[N_DIM] = x_r;
+			f[N_DIM] = f_r;
+			x_r=tempV;
+			f_r=tempD;
+		}
+		// Шаг 4d.
+		if (f_r &gt; f_h)	flag = true;
+		if (flag)
+		{	// Шаг 5. Сжатие
+			x_s = x_h * beta + x_c * (1 - beta);
+			f_s = Func(x_s);
+			if (f_s &lt; f_h)
+			{	// 6.
+				tempD=f_h;
+				tempV=x_h;
+				smpl-&gt;v[N_DIM] = x_s;
+				f[N_DIM] = f_s;
+				x_s=tempV;
+				f_s=tempD;
+			}
+			else
+			{	// Шаг 7. Глобальное сжатие
+				for (i=0; i&lt;=N_DIM; i++)
+					smpl-&gt;v[i]=x_l + (smpl-&gt;v[i] - x_l)/2;
+//возможно в этом цикле ошибка, так как минимальным будет вектор не x_l а x_h. проверяйте.
+			}
+		}
+
+	}
+	return f_l;
+}
+</pre>
+<a name=".D0.97.D0.B0.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5"></a><h2> <span class="mw-headline"> Заключение </span></h2>
+<p>Симплекс-метод Нелдера-Мида является очень эффективным алгоритмом поиска экстремума функции многих переменных, не накладывающим ограничений на гладкость функции. На каждой итерации алгоритма производится как правило одно-два вычисления значений функции, что чрезвычайно эффективно если эти вычисления очень медленны. Кроме того, алгоритма очень прост в реализации. Главным же его недостатком является отсутствие теории сходимости и наличие примеров, когда метод расходится даже на гладких функциях.
+</p>
+<a name=".D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BB.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D1.8B"></a><h2> <span class="mw-headline"> Список литературы </span></h2>
+<ul><li> <i>Банди Б.</i>&nbsp; Методы Оптимизации. Вводный курс. М.: Радио и связь, 1988.
+</li><li> <a href="http://www.scholarpedia.org/article/Nelder-Mead_algorithm" class="external free" title="http://www.scholarpedia.org/article/Nelder-Mead_algorithm" rel="nofollow">http://www.scholarpedia.org/article/Nelder-Mead_algorithm</a>
+</li></ul>
+<a name=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></a><h2> <span class="mw-headline"> См. также </span></h2>
+<ul><li><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D1%83%D0%BC_%D0%9C%D0%9C%D0%9F_%D0%92%D0%9C%D0%9A%2C_4%D0%B9_%D0%BA%D1%83%D1%80%D1%81%2C_%D0%BE%D1%81%D0%B5%D0%BD%D1%8C_2008" title="Практикум ММП ВМК, 4й курс, осень 2008">Практикум ММП ВМК, 4й курс, осень 2008</a>
+</li><li><a href="http://www.machinelearning.ru/wiki/images/2/2f/Nelder_Mead_Example1.zip" class="internal" title="Nelder Mead Example1.zip"> Код программы</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 290/1000000
+Post-expand include size: 128/2097152 bytes
+Template argument size: 16/2097152 bytes
+#ifexist count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:1299-0!1!0!!ru!2!edit=0 and timestamp 20181024155722 -->
+<div class="printfooter">
+Источник — «<a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0">http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0</a>»</div>
+			<div id="catlinks"><p class="catlinks"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Categories" title="Служебная:Categories">Категория</a>: <span dir="ltr"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D0%B1%D0%B5%D0%B7%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" title="Категория:Численные методы безусловной оптимизации">Численные методы безусловной оптимизации</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Просмотры</h5>
+		<div class="pBody">
+			<ul>
+					 <li id="ca-nstab-main" class="selected"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0" title="Содержание статьи [ctrl-c]" accesskey="c">Статья</a></li>
+					 <li id="ca-talk" class="new"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;action=edit" title="Обсуждение содержания страницы [ctrl-t]" accesskey="t">Обсуждение</a></li>
+					 <li id="ca-viewsource"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;action=edit" title="Эта страница защищена от изменений, но вы можете посмотреть и скопировать её исходный текст [ctrl-e]" accesskey="e">Просмотр</a></li>
+					 <li id="ca-history"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;action=history" title="Журнал изменений страницы [ctrl-h]" accesskey="h">История</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Личные инструменты</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Userlogin&amp;returnto=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0" title="Здесь можно зарегистрироваться в системе, но это необязательно [ctrl-o]" accesskey="o">Представиться системе</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wiki/logo.png);" href="http://www.machinelearning.ru/wiki/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [ctrl-z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class="portlet" id="p-navigation">
+		<h5>Навигация</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [ctrl-z]" accesskey="z">Заглавная страница</a></li>
+				<li id="n-portal"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB_%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0" title="О проекте, о том, что вы можете сделать, где что находится">Сообщество</a></li>
+				<li id="n-.D0.9D.D0.BE.D0.B2.D0.BE.D1.81.D1.82.D0.B8"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8">Новости</a></li>
+				<li id="n-.D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BD.D0.B8.D0.B5-.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B8"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Recentchanges">Последние правки</a></li>
+				<li id="n-randompage"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Random" title="Посмотреть случайную страницу [ctrl-x]" accesskey="x">Случайная статья</a></li>
+				<li id="n-help"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Справочник по проекту «MachineLearning»">Справка</a></li>
+				<li id="n-.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D0.B0.D0.B6"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%B0%D0%B6">Инструктаж</a></li>
+				<li id="n-.D0.92.D0.BE.D0.BF.D1.80.D0.BE.D1.81.D1.8B-.D0.B8-.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D1.8B"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%A7%D0%B0%D0%92%D0%9E">Вопросы и ответы</a></li>
+				<li id="n-ToDo"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:ToDo">ToDo</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="portlet" id="p-.C2.A0">
+		<h5>&nbsp;</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-.D0.AD.D0.BD.D1.86.D0.B8.D0.BA.D0.BB.D0.BE.D0.BF.D0.B5.D0.B4.D0.B8.D1.8F-.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0-.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%AD%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">Энциклопедия анализа данных</a></li>
+				<li id="n-.D0.9F.D0.BE.D0.BF.D1.83.D0.BB.D1.8F.D1.80.D0.BD.D1.8B.D0.B5-.D0.B8-.D0.BE.D0.B1.D0.B7.D0.BE.D1.80.D0.BD.D1.8B.D0.B5-.D1.81.D1.82.D0.B0.D1.82.D1.8C.D0.B8"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B8_%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8">Популярные и обзорные статьи</a></li>
+				<li id="n-.D0.9F.D1.83.D0.B1.D0.BB.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D0.B8"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">Публикации</a></li>
+				<li id="n-.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5-.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9F%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8">Полезные ссылки</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Поиск</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Искать это слово [ctrl-f]" accesskey="f" value="">
+				<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Перейти" title="Перейти к странице, имеющей в точности такое название">&nbsp;
+				<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Найти" title="Найти страницы, содержащие указанный текст">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Инструменты</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Whatlinkshere/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0" title="Список всех страниц, которые ссылаются на эту страницу [ctrl-j]" accesskey="j">Ссылки сюда</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Recentchangeslinked/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0" title="Последние изменения в страницах, на которые ссылается эта страница [ctrl-k]" accesskey="k">Связанные правки</a></li>
+<li id="t-upload"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Upload" title="Загрузить изображения или мультимедиа-файлы [ctrl-u]" accesskey="u">Загрузить файл</a></li>
+<li id="t-specialpages"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Specialpages" title="Список служебных страниц [ctrl-q]" accesskey="q">Спецстраницы</a></li>
+				<li id="t-print"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;printable=yes" title="Версия для печати этой страницы [ctrl-p]" accesskey="p">Версия для печати</a></li>				<li id="t-permalink"><a href="http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D0%B5%D0%BB%D0%B4%D0%B5%D1%80%D0%B0-%D0%9C%D0%B8%D0%B4%D0%B0&amp;oldid=25550" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="./Метод Нелдера-Мида_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+				<div id="f-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="./Метод Нелдера-Мида_files/cc-logo.png" alt="Creative Commons Attribution/Share-Alike"></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> Последнее изменение этой страницы: 06:09, 22 ноября 2012.</li>
+				<li id="viewcount">К этой странице обращались 44&nbsp;366 раз.</li>
+				<li id="copyright">Содержимое доступно в соответствии с <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="external " title="http://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow">Creative Commons Attribution/Share-Alike</a>.</li>
+				<li id="privacy"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="MachineLearning:Политика конфиденциальности">Политика конфиденциальности</a></li>
+				<li id="about"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="MachineLearning:Описание">Описание MachineLearning</a></li>
+				<li id="disclaimer"><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="MachineLearning:Отказ от ответственности">Отказ от ответственности</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Метод Нелдера-Мида_files/ga.js.Без названия" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4591433-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script><!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.machinelearning.ru"]);
+  _paq.push(["setDomains", ["*.machinelearning.ru","*.www.machinelearning.ru"]]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://s.inmedias.ru/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "3]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><img src="http://s.inmedias.ru/piwik.php?idsite=3&amp;rec=1" style="border:0" alt="" /></noscript>
+<!-- End Piwik Code --><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter30907996 = new Ya.Metrika({id:30907996,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/30907996" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --></div>
+<!-- Served in 0.065 secs. -->
+</body></html>
