@@ -21,22 +21,23 @@ def Calculate(T,Y):
             np.array(f(t,y).subs(dic).evalf().T)[0]
 
 
+
 yn=np.array([1,0,1])
 Tn,tmax=0,2
 h=0.01
 
-Time=[]
-Y1=[]
-Y2=[]
-Y3=[]
+Time=np.array([])
+Y1=np.array([])
+Y2=np.array([])
+Y3=np.array([])
 while Tn<=tmax:
     print(Tn)
     Tn=Tn+h
     yo=yn
-    Time.append(Tn)
-    Y1.append(yo[0])
-    Y2.append(yo[1])
-    Y3.append(yo[2])
+    Time=np.append(Time,Tn)
+    Y1=np.append(Y1,yo[0])
+    Y2=np.append(Y2,yo[1])
+    Y3=np.append(Y3,yo[2])
     pfpt,p2fpt2,J,pJpt,F=Calculate(Tn,yn)
     yn=np.array(yn+h*(F+h/2*(pfpt+np.dot(J,F))+h**2/6*(p2fpt2+np.dot(pJpt,F)+np.dot(J,pfpt))))
 plt.subplot(221)
