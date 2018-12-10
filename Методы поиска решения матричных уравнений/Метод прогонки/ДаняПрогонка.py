@@ -65,26 +65,37 @@ for j in range(1,n-1):
 b[n-1]=1
 print('FiL matrix finished')
 
+n=3
+A=np.array([[1,4,6],[8,3,6],[1,2,3]])
+b=np.array([2,2,4])
 
 x9=solve(A,b)
 
 d,c,a=np.diag(A,k=0),np.diag(A,k=1),np.diag(A,k=-1)
 M,L,x=np.zeros(n),np.zeros(n),np.zeros(n)
-
+print(d,c,a)
+# a - 2
+# d,c -1
 # Прямая прогонка 
-for i in range(0,n):
+for i in range(0,n-1):
 	if i==0:
-		M[i]=-c[0]/d[0]
-		L[i]=b[0]/d[0]
+		L[i]=-c[0]/d[0]
+		M[i]=b[0]/d[0]
 	else:
-		M[i]=(b[i-1]-M[i-1]*a[i-2])/(a[i-2]*L[i-1]+d[i-1])
-		L[i]=-c[i-1]/(a[i-2]*L[i-1]+d[i-1])
+		print('ci',c[i-1],a[i-2],L[i-1],d[i-1])
+		print('ci',c[i],a[i-1],L[i-1],d[i])
+		L[i]=-c[i]/(a[i-1]*L[i-1]+d[i])
+		M[i]=(b[i]-M[i-1]*a[i-1])/(a[i-1]*L[i-1]+d[i])
+print(M)
+print(L)
+
 
 # Обратная прогонка 
-x[n-1]=(b[n-1]-M[n-1]*a[n-2])/(a[n-2]*L[n-1]+d[n-1])
+x[n-1]=(b[n-1]-M[n-2]*a[n-2])/(a[n-2]*L[n-2]+d[n-1])
 
 for i in reversed(range(0,n-1)):
+	# x[0]=x[1]*L[1]+M[1]
 	x[i]=x[i+1]*L[i+1]+M[i+1]
 
-print(x)
-print(x9)
+print((x))
+print((x9))

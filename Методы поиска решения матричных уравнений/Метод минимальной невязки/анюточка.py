@@ -1,7 +1,7 @@
 import scipy.integrate as spint
 from numpy import cos,sin
 import numpy as np
-
+from matplotlib import pyplot as plt
 # подинтегральная функция
 def f(i,t):
     return cos(1+2*t)/(1+i*t**2)
@@ -35,7 +35,7 @@ for j in range(1,n-1):
 b=np.ones(n)
 for j in range(1,n-1):
 	b[j]=B(j+1)
-
+print(A)
 # Начальное приближение
 x=b
 eps=0.001
@@ -50,7 +50,12 @@ while np.linalg.norm(x-xold)/np.linalg.norm(xold)>eps:
 	tau=((A@r)@r)/((A@r)@(A@r))
 	xold=x
 	x=(E-tau*A)@x+(tau*E)@b
-
+plt.plot(x)
+plt.show()
 # Сравним норму нашего решения и решения встроенной функцией
 print(np.linalg.norm(x),N)
+print(x)
 print(np.linalg.norm(np.linalg.solve(A,b)))
+
+plt.plot(np.linalg.solve(A,b))
+plt.show()

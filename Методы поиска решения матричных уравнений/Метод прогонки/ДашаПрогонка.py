@@ -1,7 +1,7 @@
 import scipy.integrate as spint
 from numpy import cos,sin,exp, log as ln
 import numpy as np
-from numpy.linalg import inv,norm,cond
+from numpy.linalg import inv,norm,cond,solve
 
 # подинтегральная функция
 def f(i,t):
@@ -39,7 +39,7 @@ def Int(m):
 		
 	return [I,k]
 
-n=5
+n=1000
 
 # Заполнение матрицы A
 A=np.zeros([n,n], dtype=np.float64)
@@ -58,7 +58,7 @@ for j in range(1,n-1):
 	def F(t): 
 		return f(j+1,t) 
 	# print(j)
-	if n<=1000:
+	if n<=10:
 		b[j]=-Int(j+1)[0]
 	else:
 		b[j]=-spint.quad(F,0,1)[0] 
@@ -73,26 +73,26 @@ d=np.hstack([0,np.diag(A,k=0)])
 c=np.hstack([0,np.diag(A,k=1)])
 a=np.hstack([0,0,np.diag(A,k=-1)])
 
-def L(n):
-	if n==2:
-		return -c[1]/d[1]
-	else:
-		i=n-1
-		return -c[i]/(a[i]*L(i)+d[i])
 
-def M(n):
-	if n==2:
-		return b[1]/d[1]
-	else:
-		i=n-1
-		return (b[i]-M(i)*a[i])/(a[i]*L(i)+d[i])
+L=np.zeros(n+2)
+M=np.zeros(n+2)
+
+L[2]=-c[1]/d[1]
+M[2]=b[1]/d[1]
+
+for N in range(3,n+1):
+	i=N-1
+	L[N]=-c[i]/(a[i]*L[i]+d[i])
+	M[N]=(b[i]-M[i]*a[i])/(a[i]*L[i]+d[i])
 
 x=np.zeros(n+1)
-x[n]=(b[n]-M(n)*a[n])/(a[n]*L(n)+d[n])
+x[n]=(b[n]-M[n]*a[n])/(a[n]*L[n]+d[n])
 
-for i in reversed(range(1,n)): # n, n-1, ..., 1
-	x[i]=x[i+1]*L(i+1)+M(i+1)
+for i in range(n-1,0,-1): # n, n-1, ..., 1
+	x[i]=x[i+1]*L[i+1]+M[i+1]
 
 # Обрезаем лишний нолик 
 x=x[1:]
+b=b[1:]
 print(x)
+print(solve(A,b))

@@ -39,7 +39,7 @@ def Int(m):
 		
 	return [I,k]
 
-n=1000
+n=5
 
 # Заполнение матрицы A
 A=np.zeros([n,n], dtype=np.float32)
@@ -98,3 +98,6 @@ while norm(r)>eps:
 # Сравним норму нашего решения и решения встроенной функцией
 print(np.linalg.norm(x),N)
 print(np.linalg.norm(np.linalg.solve(A,b)))
+
+print(x)
+print(np.linalg.solve(A,b))

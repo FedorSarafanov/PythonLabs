@@ -1,6 +1,8 @@
 from numpy import sqrt,sum,abs
+import numpy as np
+from matplotlib import pyplot as plt
 def f(x):
-    return x
+    return x**2-x**3
 
 def T(N,f,a,b):
     if N==0:
@@ -19,17 +21,29 @@ def S(N,f,a,b):
 def B(N,f,a,b):
     return (16*S(N,f,a,b)-T(N-1,f,a,b))/15
 
-def getIntegral(f,a,b,eps):
+def getIntegral(f,a,b,eps,plot=False):
     N=2
     int1=B(1,f,a,b)
     int2=B(2,f,a,b)
-    while abs(int2-int1)>eps:
+    ARR=[]
+    ARR.append(int2)
+    while abs(int2-int1)/abs(int2)>eps:
         N+=1
         int1=int2
         int2=B(N,f,a,b)
-    return [int2,N]
+        ARR.append(int2)
+    if plot==False:
+        return int2 
+    else:
+        return np.array(ARR)
+
 
 a=0
 b=1
 eps=0.01
+
+A=getIntegral(f,a,b,eps/100, plot=True)
+plt.plot(A)
+plt.show()
+
 print(getIntegral(f,a,b,eps))
